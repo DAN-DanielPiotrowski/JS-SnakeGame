@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    height: 100vh;
+    background-image: url('https://c4.wallpaperflare.com/wallpaper/421/1011/653/leather-logo-gaming-series-green-wallpaper-thumb.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.container {
+    height: 100%;
+    max-width: 1240px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    border: 1px solid gray;
+    box-shadow: black 20px 10px 50px;
+}
