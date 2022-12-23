@@ -36,3 +36,5 @@ const recordwall = document.getElementById('recordwall');
 let context = canvas.getContext('2d');
 const snakeParts=[];
 const player = new snakeGame(5,0);
+let LastScore=0;
+

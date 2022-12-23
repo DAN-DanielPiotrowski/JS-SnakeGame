@@ -56,6 +56,7 @@ const checkCollision = () => {
         player.food.position.y = -100;
         player.snake.tailLength++;
         player.score++;
+        LastScore++;
         if(player.score %5 === 0) player.speed++;
         setTimeout(()=>{
             player.food.position.x=Math.floor(Math.random()*player.tileCount);
@@ -88,6 +89,14 @@ const isGameOver = () =>{
             gameOver = true;
             break;
         }
+    }
+
+    if(LastScore+2 < player.score+2){
+        context.fillStyle = "white";
+        context.font = "50px verdana";
+        context.fillText("Cheater Detected!", canvas.clientWidth/7, canvas.clientHeight/2);
+        gameOver = true;
+        return gameOver;
     }
 
     if(gameOver){
