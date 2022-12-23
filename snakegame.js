@@ -15,7 +15,6 @@ const drawGame = () => {
 
 const drawSnake = () => {
     context.fillStyle="green";
-    console.log(snakeParts.length);
     for(let i=0; i<snakeParts.length; i++){
         let part=snakeParts[i];
         context.fillRect(part.x * player.tileCount, part.y * player.tileCount, player.tileSize, player.tileSize);
@@ -57,7 +56,7 @@ const checkCollision = () => {
         player.food.position.y = -100;
         player.snake.tailLength++;
         player.score++;
-        if(player.speed%5===0) player.speed++;
+        if(player.score %5 === 0) player.speed++;
         setTimeout(()=>{
             player.food.position.x=Math.floor(Math.random()*player.tileCount);
             player.food.position.y=Math.floor(Math.random()*player.tileCount);
