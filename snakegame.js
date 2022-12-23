@@ -91,7 +91,7 @@ const isGameOver = () =>{
         }
     }
 
-    if(LastScore+2 < player.score+2){
+    if(LastScore+2 < player.score){
         context.fillStyle = "white";
         context.font = "50px verdana";
         context.fillText("Cheater Detected!", canvas.clientWidth/7, canvas.clientHeight/2);
