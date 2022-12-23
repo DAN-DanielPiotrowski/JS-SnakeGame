@@ -65,6 +65,13 @@ const checkCollision = () => {
     }
 }
 
+const updateScore = () => {
+    let recordupdate = document.createElement('p');
+    let recordnote = document.createTextNode(`1. ${player.score}`);
+    recordupdate.appendChild(recordnote);
+    recordwall.appendChild(recordupdate);
+}
+
 const isGameOver = () =>{
     let gameOver = false;
 
@@ -88,8 +95,8 @@ const isGameOver = () =>{
         context.fillStyle = "white";
         context.font = "50px verdana";
         context.fillText("Game Over!", canvas.clientWidth/4, canvas.clientHeight/2)
+        updateScore();
     }
-
     return gameOver;
 }
 
@@ -98,22 +105,22 @@ drawGame();
 const keyDown = (e) => {
     switch(e.keyCode){
         case 37:
-            if(player.snake.xvelocity===1) break;
+            if(player.snake.xvelocity===1 && player.score > 0) break;
             player.snake.xvelocity=-1;
             player.snake.yvelocity=0;
             break;
         case 38:
-            if(player.snake.yvelocity===1) break;
+            if(player.snake.yvelocity===1 && player.score > 0) break;
             player.snake.xvelocity=0;
             player.snake.yvelocity=-1;
             break;
         case 39:
-            if(player.snake.xvelocity===-1) break;
+            if(player.snake.xvelocity===-1 && player.score > 0) break;
             player.snake.xvelocity=1;
             player.snake.yvelocity=0;
             break;
         case 40:
-            if(player.snake.yvelocity===-1) break;
+            if(player.snake.yvelocity===-1 && player.score > 0) break;
             player.snake.xvelocity=0;
             player.snake.yvelocity=1;
             break; 
